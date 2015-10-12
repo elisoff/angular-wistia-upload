@@ -7,7 +7,7 @@
 			  <strong>Sorry!</strong> {{msgFailure ? msgFailure : 'You can only upload videos.'}}
 			</div>
 		    <div class="col-lg-2">
-		        <span class="btn btn-success fileinput-button" ng-hide="isUploading" ng-class="{disabled: btnDisabled}">
+		        <span class="btn btn-success fileinput-button" ng-hide="isUploading || isProcessing" ng-class="{disabled: btnDisabled}">
 		            <i class="glyphicon glyphicon-plus"></i>
 		            <span>Upload video</span>
 		            <input type="file" name="file">
