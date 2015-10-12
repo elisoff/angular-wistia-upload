@@ -1,4 +1,4 @@
-var app = angular.module('wUploadApp',['blueimp.fileupload']);
+
 
 app.controller('sampleApp', ['$scope', 
 	function ($scope) {
