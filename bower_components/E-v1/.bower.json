@@ -1,0 +1,15 @@
+{
+  "name": "E-v1",
+  "_cacheHeaders": {
+    "ETag": "\"56181f52-62ec6\"",
+    "Last-Modified": "Fri, 09 Oct 2015 20:10:58 GMT",
+    "Content-Length": "405190",
+    "Content-Type": "application/javascript"
+  },
+  "_release": "e-tag:56181f52-",
+  "main": "index.js",
+  "_source": "http://fast.wistia.com/assets/external/E-v1.js",
+  "_target": "*",
+  "_originalSource": "http://fast.wistia.com/assets/external/E-v1.js",
+  "_direct": true
+}
