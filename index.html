@@ -2,25 +2,24 @@
 <html>
 <head>
 	<title>Upload to wistia</title>
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/jquery.fileupload.css">
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="bower_components/blueimp-file-upload/css/jquery.fileupload.css">
 </head>
 <body ng-app="wUploadApp">
-	<div class="container" ng-controller="sampleApp">
+	<div class="container">
 		<div class="jumbotron"><h1>Video Upload</h1></div>
-		<div wistia-upload options="optionsObj"></div>
-		<div wistia-upload options="optionsObj"></div>
+		<div wistia-upload></div>
+		<div wistia-upload></div>
 	</div>
 
-	<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script>
-	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.min.js"></script>
-	<script src="js/jquery.ui.widget.js"></script>
-	<script src="js/jquery.fileupload.js"></script>
-	<script src="js/jquery.fileupload-angular.js"></script>
+	<script charset="ISO-8859-1" src="bower_components/E-v1/index.js" async></script>
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+	<script src="bower_components/blueimp-file-upload/js/jquery.fileupload.js"></script>
+	<script src="bower_components/blueimp-file-upload/js/jquery.fileupload-angular.js"></script>
 
-	<script src="app.js"></script>
-	<script src="wistiaupload.js"></script>
-</body>
+	<script src="wistiaupload-directive.js"></script>
+</body> 
 </html>

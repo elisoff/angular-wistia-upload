@@ -1,0 +1,27 @@
+{
+  "name": "angular-wistia-upload",
+  "version": "0.0.1",
+  "homepage": "https://github.com/elsap/angular-wistia-upload",
+  "authors": [
+    "elsap <elis.santis@gmail.com>"
+  ],
+  "description": "",
+  "main": "wistiaupload-directive.js",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7",
+    "blueimp-file-upload": "git://github.com/blueimp/jQuery-File-Upload#~9.11.2",
+    "bootstrap": "~3.3.5",
+    "E-v1": "http://fast.wistia.com/assets/external/E-v1.js",
+    "jquery": "~2.1.4"
+  }
+}
