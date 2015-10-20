@@ -1,4 +1,4 @@
-var app = angular.module('wUploadApp',['blueimp.fileupload']);
+var app = angular.module('wUploadApp',['templates-main', 'blueimp.fileupload']);
 
 app.constant('wistiaConfig', {
     apiPassword: '2d3e652e8e6b6140270143ed0716e1b3a659d02b50cc201e57011b5eb3e28934',
@@ -10,7 +10,7 @@ app.directive('wistiaUpload', ['fileUpload', 'wistiaConfig', '$timeout', '$http'
     function(fileUpload, wistiaConfig, $timeout, $http) {
         return {
             restrict: 'AE',
-            templateUrl: 'wistia-upload.html', 
+            templateUrl: '../wistia-upload.html', 
             scope: {},
             controller: function($scope) {
                 $scope.isUploading = false;

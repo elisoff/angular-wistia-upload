@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-serve');
     grunt.loadNpmTasks('grunt-karma'); 
+	grunt.loadNpmTasks('grunt-html2js');
     grunt.loadNpmTasks('grunt-contrib-jshint');
 
     grunt.initConfig({
@@ -12,6 +13,12 @@ module.exports = function(grunt) {
                 }
             }
         },
+		html2js:{
+			main: {
+				src: ['wistia-upload.html'],
+				dest: 'template.js'
+			}
+		},
         serve: {
             options: {
                 port: 8282
@@ -41,6 +48,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('test', [  
         'jshint',
+		'html2js',
         'karma'
     ]);
 };

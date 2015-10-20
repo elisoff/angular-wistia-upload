@@ -1,27 +1,26 @@
 describe('wUploadApp.wistiaUpload', function() {
 
-	var $rootScope, $compile, $httpBackend, directiveElement;
+	var compile, scope, directiveElement;
 
-	beforeEach(module('wUploadApp'));
+	beforeEach(function(){
+		module('wUploadApp');
 
-	beforeEach(inject(function($injector, _$compile_, _$rootScope_){
-	    $compile = _$compile_;
-	    $rootScope = _$rootScope_;
-
-    	$httpBackend = $injector.get('$httpBackend');
-
-	}));
+		inject(function($compile, $rootScope){
+			compile = $compile;
+			scope = $rootScope.$new();
+		});
+		
+		var element = angular.element('<div wistia-upload></div>');
+		directiveElement = compile(element)(scope);
+		scope.$digest();
+		
+	});
 
 	it('should have a input file', function() {
+	
+		var input = directiveElement.find('input[type=file]');
 
-		$httpBackend.whenGET('wistia-upload.html').respond(200, '');
-
-	    directiveElement = $compile('<div wistia-upload></div>')($rootScope);
-    	$rootScope.$digest();
-
-		console.log(directiveElement.html());
-
-    	expect(directiveElement.html()).toContain("<input type=\"file\" name=\"file\">");
+    	expect(input.length).toBe(1);
 	});
 
 });
