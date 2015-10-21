@@ -34,6 +34,8 @@ module.exports = function(grunt) {
                         'bower_components/angular/angular.js',
                         'bower_components/angular-mocks/angular-mocks.js',
                         'bower_components/jquery/dist/jquery.js',
+                        'bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js',
+                        'bower_components/blueimp-file-upload/js/jquery.fileupload.js',
                         'bower_components/blueimp-file-upload/js/jquery.fileupload-angular.js',
                         '*.js',
                         'test/**/*.js'
@@ -45,6 +47,8 @@ module.exports = function(grunt) {
  
 
     grunt.registerTask('server', ['serve']);
+
+    grunt.registerTask('template', ['html2js']);
 
     grunt.registerTask('test', [  
         'jshint',

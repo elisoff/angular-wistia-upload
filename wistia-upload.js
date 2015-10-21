@@ -16,6 +16,8 @@ app.directive('wistiaUpload', ['fileUpload', 'wistiaConfig', '$timeout', '$http'
                 $scope.isUploading = false;
                 $scope.isProcessing = false;
                 $scope.displayFailureMessage = false;
+                $scope.progressPercentual = 0;
+                $scope.progressBarActive = false;
 
                 var retrieveVideoHashWhenReady = function() {
                     var requestConfig = {
@@ -84,11 +86,13 @@ app.directive('wistiaUpload', ['fileUpload', 'wistiaConfig', '$timeout', '$http'
 
                         if (file.type.indexOf('video') === -1) {
                             $scope.displayFailureMessage = true;
+                            $scope.$apply();
                             return;
                         }
 
                         $scope.isUploading = true;
                         data.submit();
+                        $scope.$apply();
                     },
                     done: function(e, data) { // called when the uploading is done
                         $scope.isUploading = false;
@@ -102,13 +106,24 @@ app.directive('wistiaUpload', ['fileUpload', 'wistiaConfig', '$timeout', '$http'
                             $scope.failureMessage = 'Something went wrong, we couldn\'t upload the video';
                             $scope.displayFailureMessage = true;
                         }
+
+                        $scope.$apply();
                     },
                     fail: function() { // called when the uploading fails
                         $scope.isUploading = false;
                         $scope.failureMessage = 'Something went wrong.';
                         $scope.displayFailureMessage = true;
+
+                        $scope.$apply();
+                    },
+                    progressall: function (e, data) {
+                        $scope.progressPercentual = parseInt(data.loaded / data.total * 100, 10);
+                        $scope.$apply();
                     }
                 };
+            },
+            link: function(scope, element, attrs, controller) {
+                $(element.find('#fileupload')).fileupload(scope.uploadOptions);
             }
         };
     }]);

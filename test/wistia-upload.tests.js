@@ -11,16 +11,12 @@ describe('wUploadApp.wistiaUpload', function() {
 		});
 		
 		var element = angular.element('<div wistia-upload></div>');
-		directiveElement = compile(element)(scope);
+		directiveElement = $(compile(element)(scope));
 		scope.$digest();
-		
 	});
 
-	it('should have a input file', function() {
-	
-		var input = directiveElement.find('input[type=file]');
-
-    	expect(input.length).toBe(1);
+	it('should have a input file named file', function() {
+    	expect(directiveElement.html()).toContain('<input type="file" name="file">');
 	});
 
 });

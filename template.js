@@ -3,7 +3,7 @@ angular.module('templates-main', ['../wistia-upload.html']);
 angular.module("../wistia-upload.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../wistia-upload.html",
     "<div class=\"container-fluid\">\n" +
-    "	<form id=\"fileupload\" action=\"\" method=\"POST\" enctype=\"multipart/form-data\" data-file-upload=\"uploadOptions\">\n" +
+    "	<form id=\"fileupload\" action=\"\" method=\"POST\" enctype=\"multipart/form-data\">\n" +
     "	<div class=\"row fileupload-buttonbar\">\n" +
     "		<div class=\"col-lg-12\">\n" +
     "			<div class=\"alert alert-danger alert-dismissible\" role=\"alert\" ng-show=\"displayFailureMessage\">\n" +
@@ -18,8 +18,10 @@ angular.module("../wistia-upload.html", []).run(["$templateCache", function($tem
     "		        </span>\n" +
     "		    </div>\n" +
     "		    <div class=\"col-lg-10\">\n" +
-    "		    	<div class=\"fade\" ng-class=\"{in: active()}\">\n" +
-    "			        <div class=\"progress progress-striped active\" data-file-upload-progress=\"progress()\"><div class=\"progress-bar progress-bar-success\" ng-style=\"{width: num + '%'}\"></div></div>\n" +
+    "		    	<div class=\"fade\" ng-class=\"{in: isUploading}\">\n" +
+    "			        <div class=\"progress progress-striped active\">\n" +
+    "			        	<div class=\"progress-bar progress-bar-success\" style=\"width: {{progressPercentual + '%'}}\"></div>\n" +
+    "			        </div>\n" +
     "			        <div class=\"progress-extended\"></div>\n" +
     "			    </div>\n" +
     "		    </div>\n" +
