@@ -81,7 +81,7 @@ app.directive('wistiaUpload', ['fileUpload', 'wistiaConfig', '$timeout', '$http'
                         acceptFileTypes: '@'
                     }],
                     add: function(e, data) { // called when a file is picked
-                       var file = data.files[0];
+                        var file = data.files[0];
                         $scope.displayFailureMessage = false;
 
                         if (file.type.indexOf('video') === -1) {

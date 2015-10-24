@@ -11,7 +11,7 @@ describe('wUploadApp.wistiaUpload', function() {
 		});
 		
 		var element = angular.element('<div wistia-upload></div>');
-		directiveElement = $(compile(element)(scope));
+		directiveElement = compile(element)(scope);
 		scope.$digest();
 	});
 
