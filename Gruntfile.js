@@ -46,7 +46,10 @@ module.exports = function(grunt) {
     });
  
 
-    grunt.registerTask('server', ['serve']);
+    grunt.registerTask('server', [
+        'html2js', 
+        'serve'
+    ]);
 
     grunt.registerTask('template', ['html2js']);
 
